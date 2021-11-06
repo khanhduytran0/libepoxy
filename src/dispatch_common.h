@@ -28,8 +28,13 @@
 #define PLATFORM_HAS_GLX ENABLE_GLX
 #define PLATFORM_HAS_WGL 1
 #elif defined(__APPLE__)
+#ifndef APPLE_IOS
 #define PLATFORM_HAS_EGL 0 
 #define PLATFORM_HAS_GLX ENABLE_GLX
+#else
+#define PLATFORM_HAS_EGL ENABLE_EGL
+#define PLATFORM_HAS_GLX 0
+#endif
 #define PLATFORM_HAS_WGL 0
 #elif defined(ANDROID)
 #define PLATFORM_HAS_EGL ENABLE_EGL

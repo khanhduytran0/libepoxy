@@ -174,10 +174,18 @@
 #include "dispatch_common.h"
 
 #if defined(__APPLE__)
+#if !defined(APPLE_IOS)
 #define GLX_LIB "/opt/X11/lib/libGL.1.dylib"
 #define OPENGL_LIB "/System/Library/Frameworks/OpenGL.framework/Versions/Current/OpenGL"
 #define GLES1_LIB "libGLESv1_CM.so"
 #define GLES2_LIB "libGLESv2.so"
+#else
+#define METALANGLE_LIB "/Applications/PojavLauncher.app/Frameworks/MetalANGLE.framework/MetalANGLE"
+#define EGL_LIB METALANGLE_LIB
+#define OPENGL_LIB METALANGLE_LIB
+#define GLES1_LIB METALANGLE_LIB
+#define GLES2_LIB METALANGLE_LIB
+#endif
 #elif defined(__ANDROID__)
 #define GLX_LIB "libGLESv2.so"
 #define EGL_LIB "libEGL.so"
