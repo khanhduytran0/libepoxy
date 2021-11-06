@@ -72,6 +72,7 @@ endif
 conf.set10('ENABLE_GLX', build_glx)
 conf.set10('ENABLE_EGL', build_egl)
 conf.set10('ENABLE_X11', enable_x11)
+conf.set10('APPLE_IOS', 1) # TODO: as an option?
 
 # Compiler flags, taken from the Xorg macros
 if cc.get_id() == 'msvc'
